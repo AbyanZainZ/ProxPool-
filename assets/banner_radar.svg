@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 350" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg3" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#021014"/><stop offset="100%" stop-color="#062229"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="350" fill="url(#bg3)"/>
+  <g transform="translate(600, 120)">
+    <ellipse cx="0" cy="0" rx="180" ry="52" fill="none" stroke="#00e676" stroke-width="1.5" stroke-dasharray="6,6" opacity="0.5"/>
+    <ellipse cx="0" cy="0" rx="125" ry="36" fill="none" stroke="#00e5ff" stroke-width="2" opacity="0.7"/>
+    <circle cx="-120" cy="8" r="6" fill="#00e676"/>
+    <circle cx="115" cy="-12" r="6" fill="#00e5ff"/>
+    <circle cx="165" cy="18" r="5" fill="#ffea00"/>
+    <circle cx="0" cy="0" r="44" fill="#042f36" stroke="#00e676" stroke-width="3.5"/>
+    <ellipse cx="0" cy="0" rx="22" ry="44" fill="none" stroke="#00e676" stroke-width="1.5" opacity="0.6"/>
+    <line x1="-44" y1="0" x2="44" y2="0" stroke="#00e676" stroke-width="1.5" opacity="0.6"/>
+    <circle cx="0" cy="0" r="9" fill="#00e676"/>
+  </g>
+  <text x="600" y="242" font-family="'Segoe UI', sans-serif" font-size="44" font-weight="800" text-anchor="middle" fill="#ecfdf5" letter-spacing="4">PROXPOOL</text>
+  <text x="600" y="278" font-family="'Segoe UI', sans-serif" font-size="20" font-weight="600" text-anchor="middle" fill="#00e676" letter-spacing="1.5">108+ Passive Money Nodes in Docker</text>
+  <text x="600" y="314" font-family="monospace" font-size="13" text-anchor="middle" fill="#6ee7b7" letter-spacing="2">GLOBAL RESIDENTIAL NODE ORCHESTRATOR</text>
+</svg>

@@ -1,0 +1,24 @@
+FROM debian:12-slim
+
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    ca-certificates \
+    curl \
+    wget \
+    tar \
+    procps \
+    && rm -rf /var/lib/apt/lists/*
+
+# Download latest proxybase-cli if available
+RUN curl -s https://api.github.com/repos/proxybasehq/proxybase-cli/releases/latest \
+    | grep "browser_download_url.*linux.*64" \
+    | cut -d : -f 2,3 \
+    | tr -d \" \
+    | wget -qi - -O /tmp/proxybase.tar.gz || true \
+    && if [ -f /tmp/proxybase.tar.gz ]; then tar -xzf /tmp/proxybase.tar.gz -C /usr/local/bin/ || true; fi \
+    && rm -f /tmp/proxybase.tar.gz
+
+WORKDIR /app
+COPY entrypoint-proxybase.sh /entrypoint.sh
+RUN chmod +x /entrypoint.sh
+
+ENTRYPOINT ["/entrypoint.sh"]

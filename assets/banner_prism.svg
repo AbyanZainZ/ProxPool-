@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 350" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#090514"/><stop offset="50%" stop-color="#140b29"/><stop offset="100%" stop-color="#070410"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="350" fill="url(#bg2)"/>
+  <line x1="120" y1="155" x2="555" y2="120" stroke="#ffffff" stroke-width="5" opacity="0.9"/>
+  <text x="260" y="125" font-family="monospace" font-size="13" fill="#a78bfa" letter-spacing="1">20 US RESIDENTIAL IPs</text>
+  <line x1="645" y1="105" x2="1080" y2="55" stroke="#ff2a85" stroke-width="4.5"/>
+  <line x1="648" y1="112" x2="1080" y2="85" stroke="#ff9100" stroke-width="4.5"/>
+  <line x1="650" y1="120" x2="1080" y2="115" stroke="#ffea00" stroke-width="4.5"/>
+  <line x1="650" y1="128" x2="1080" y2="145" stroke="#00e676" stroke-width="4.5"/>
+  <line x1="648" y1="135" x2="1080" y2="175" stroke="#00e5ff" stroke-width="4.5"/>
+  <line x1="645" y1="142" x2="1080" y2="205" stroke="#d500f9" stroke-width="4.5"/>
+  <polygon points="600,48 662,158 538,158" fill="#180e2eef" stroke="#00e5ff" stroke-width="4"/>
+  <polygon points="600,68 642,146 558,146" fill="none" stroke="#ff2a85" stroke-width="1.5" opacity="0.8"/>
+  <text x="600" y="238" font-family="'Segoe UI', sans-serif" font-size="44" font-weight="900" text-anchor="middle" fill="#ffffff" letter-spacing="5">PROXPOOL</text>
+  <text x="600" y="274" font-family="'Segoe UI', sans-serif" font-size="20" font-weight="600" text-anchor="middle" fill="#00e5ff" letter-spacing="2">108+ Passive Money Nodes in Docker</text>
+  <text x="600" y="312" font-family="monospace" font-size="13" text-anchor="middle" fill="#f472b6" letter-spacing="2">TUN2SOCKS • DOCKER MATRIX • 108+ PLATFORMS</text>
+</svg>

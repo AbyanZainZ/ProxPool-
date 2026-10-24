@@ -1,0 +1,10 @@
+# Private credentials, local virtualenvs & proxy lists (DO NOT UPLOAD TO GITHUB)
+.env
+proxies.txt
+data/
+venv/
+docker-compose.multiproxy.yml
+MASTER_100_PROXY_DOCKER_PLATFORMS.md
+__pycache__/
+*.pyc
+*.log

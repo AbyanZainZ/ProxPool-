@@ -1,0 +1,116 @@
+version: '3.8'
+
+services:
+  # ==============================================================
+  # 1. EARNAPP (Bright Data - Residential High Payout)
+  # ==============================================================
+  earnapp:
+    build:
+      context: .
+      dockerfile: Dockerfile.earnapp
+    container_name: earnapp-worker
+    restart: unless-stopped
+    volumes:
+      - ./data/earnapp:/etc/earnapp
+    networks:
+      - income-net
+
+  # ==============================================================
+  # 2. TRAFFMONETIZER (Bandwidth Sharing)
+  # ==============================================================
+  traffmonetizer:
+    image: traffmonetizer/cli_v2:latest
+    container_name: traffmonetizer-worker
+    restart: unless-stopped
+    command: start accept --token ${TRAFFMONETIZER_TOKEN} --device-name ${DEVICE_NAME:-Docker-Node}
+    networks:
+      - income-net
+
+  # ==============================================================
+  # 3. PAWNS.APP / IPROYAL
+  # ==============================================================
+  pawns:
+    image: iproyal/pawns-cli:latest
+    container_name: pawns-worker
+    restart: unless-stopped
+    command: -email=${PAWNS_EMAIL} -password=${PAWNS_PASSWORD} -device-name=${DEVICE_NAME:-Docker-Node} -device-id=${PAWNS_DEVICE_ID:-node01} -accept-tos
+    networks:
+      - income-net
+
+  # ==============================================================
+  # 4. PACKETSTREAM (Packeter)
+  # ==============================================================
+  packetstream:
+    image: packetstream/psclient:latest
+    container_name: packetstream-worker
+    restart: unless-stopped
+    environment:
+      - CID=${PACKETSTREAM_CID}
+    networks:
+      - income-net
+
+  # ==============================================================
+  # 5. HONEYGAIN (Residential Credits)
+  # ==============================================================
+  honeygain:
+    image: honeygain/honeygain:latest
+    container_name: honeygain-worker
+    restart: unless-stopped
+    command: -tou-accept -email ${HONEYGAIN_EMAIL} -pass ${HONEYGAIN_PASSWORD} -device ${DEVICE_NAME:-Docker-Node}
+    networks:
+      - income-net
+
+  # ==============================================================
+  # 6. EARN.FM (Lightweight Bandwidth Node)
+  # ==============================================================
+  earnfm:
+    image: earnfm/earnfm-client:latest
+    container_name: earnfm-worker
+    restart: unless-stopped
+    environment:
+      - EARNFM_TOKEN=${EARNFM_TOKEN}
+    networks:
+      - income-net
+
+  # ==============================================================
+  # 7. REPOCKET (Peer-to-Peer Data Sharing)
+  # ==============================================================
+  repocket:
+    image: repocket/repocket:latest
+    container_name: repocket-worker
+    restart: unless-stopped
+    environment:
+      - RP_EMAIL=${REPOCKET_EMAIL}
+      - RP_API_KEY=${REPOCKET_API_KEY}
+    networks:
+      - income-net
+
+  # ==============================================================
+  # 8. BITPING (Global Latency & Uptime Network)
+  # ==============================================================
+  bitping:
+    image: bitping/bitping-node:latest
+    container_name: bitping-worker
+    restart: unless-stopped
+    volumes:
+      - ./data/bitping:/root/.bitping
+    networks:
+      - income-net
+
+  # ==============================================================
+  # 9. PROXYBASE (AI Agent SOCKS5 Decentralized Node - $1.80-$3.00/GB)
+  # ==============================================================
+  proxybase:
+    build:
+      context: .
+      dockerfile: Dockerfile.proxybase
+    container_name: proxybase-worker
+    restart: unless-stopped
+    environment:
+      - WALLET_ADDRESS=${PROXYBASE_WALLET}
+    networks:
+      - income-net
+
+networks:
+  income-net:
+    driver: bridge

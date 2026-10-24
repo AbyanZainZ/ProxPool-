@@ -1,0 +1,8 @@
+# ==============================================================================
+# PROXPOOL MULTI-PROXY LIST (proxies.txt.example)
+# Copy this file to proxies.txt and add 1 proxy per line.
+# Supported Formats:
+#   socks5://username:password@198.51.100.10:1080
+#   http://username:password@198.51.100.10:8080
+#   198.51.100.10:1080:username:password
+# ==============================================================================

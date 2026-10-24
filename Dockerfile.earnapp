@@ -1,0 +1,27 @@
+FROM ubuntu:22.04
+
+ENV DEBIAN_FRONTEND=noninteractive
+ENV container=docker
+
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    ca-certificates \
+    curl \
+    wget \
+    sudo \
+    procps \
+    iproute2 \
+    iptables \
+    net-tools \
+    && rm -rf /var/lib/apt/lists/*
+
+# Pre-download official installer
+RUN wget -qO /usr/local/bin/install-earnapp.sh https://brightdata.com/static/earnapp/install.sh \
+    && chmod +x /usr/local/bin/install-earnapp.sh
+
+WORKDIR /app
+COPY entrypoint-earnapp.sh /entrypoint.sh
+RUN chmod +x /entrypoint.sh
+
+VOLUME ["/etc/earnapp"]
+
+ENTRYPOINT ["/entrypoint.sh"]

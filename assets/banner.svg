@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 350" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg4" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0c0c0e"/>
+      <stop offset="50%" stop-color="#16151a"/>
+      <stop offset="100%" stop-color="#09090b"/>
+    </linearGradient>
+    <linearGradient id="gold4" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fde047"/>
+      <stop offset="50%" stop-color="#eab308"/>
+      <stop offset="100%" stop-color="#ca8a04"/>
+    </linearGradient>
+    <radialGradient id="goldGlow" cx="50%" cy="40%" r="40%">
+      <stop offset="0%" stop-color="#eab308" stop-opacity="0.14"/>
+      <stop offset="100%" stop-color="#09090b" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="350" fill="url(#bg4)"/>
+  <rect width="1200" height="350" fill="url(#goldGlow)"/>
+  <line x1="0" y1="3" x2="1200" y2="3" stroke="url(#gold4)" stroke-width="4"/>
+  <g transform="translate(600, 118)">
+    <polygon points="0,-60 52,-30 52,30 0,60 -52,30 -52,-30" fill="#18181b" stroke="url(#gold4)" stroke-width="4"/>
+    <polygon points="0,-44 38,-22 38,22 0,44 -38,22 -38,-22" fill="none" stroke="#fde047" stroke-width="1.2" opacity="0.5"/>
+    <text x="0" y="16" font-family="'Segoe UI', 'Inter', sans-serif" font-size="46" font-weight="900" text-anchor="middle" fill="url(#gold4)">$</text>
+    <circle cx="-85" cy="0" r="5" fill="#eab308"/>
+    <line x1="-80" y1="0" x2="-52" y2="0" stroke="#eab308" stroke-width="2"/>
+    <circle cx="85" cy="0" r="5" fill="#eab308"/>
+    <line x1="52" y1="0" x2="80" y2="0" stroke="#eab308" stroke-width="2"/>
+  </g>
+  <text x="600" y="242" font-family="'Segoe UI', 'Inter', sans-serif" font-size="44" font-weight="900" text-anchor="middle" fill="#ffffff" letter-spacing="5">PROXPOOL</text>
+  <text x="600" y="278" font-family="'Segoe UI', 'Inter', sans-serif" font-size="20" font-weight="600" text-anchor="middle" fill="url(#gold4)" letter-spacing="1.5">108+ Passive Money Nodes in Docker</text>
+  <text x="600" y="314" font-family="monospace" font-size="13" text-anchor="middle" fill="#a1a1aa" letter-spacing="2">HIGH-YIELD DOCKER BANDWIDTH &amp; DEPIN VAULT</text>
+</svg>
